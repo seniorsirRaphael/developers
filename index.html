@@ -11,20 +11,20 @@
            CSS VARIABLES AND RESET
         =========================== */
         :root {
-            /* Color Palette - Improved contrast */
-            --primary-blue: #1a365d;
-            --secondary-blue: #2d3748;
-            --accent-orange: #ed8936;
-            --light-cream: #f7fafc;
+            /* Color Palette - Improved contrast and readability */
+            --primary-navy: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-orange: #f97316;
+            --light-cream: #f8fafc;
             --medium-gray: #e2e8f0;
-            --dark-charcoal: #1a202c;
-            --text-dark: #2d3748;
-            --text-light: #718096;
+            --dark-charcoal: #1e293b;
+            --text-dark: #334155;
+            --text-light: #64748b;
             --white: #ffffff;
-            --success: #38a169;
-            --warning: #d69e2e;
-            --danger: #e53e3e;
-            --info: #3182ce;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #06b6d4;
             
             /* Typography */
             --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,7 +47,7 @@
             --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
             --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
             --shadow-xl: 0 12px 24px rgba(0,0,0,0.25);
-            --shadow-orange: 0 4px 12px rgba(237, 137, 54, 0.3);
+            --shadow-orange: 0 4px 12px rgba(249, 115, 22, 0.3);
             
             /* Transitions */
             --transition-fast: 0.2s ease;
@@ -85,7 +85,7 @@
 
         h1 {
             font-size: 2.5rem;
-            color: var(--primary-blue);
+            color: var(--primary-navy);
         }
 
         h2 {
@@ -93,12 +93,18 @@
             border-left: 4px solid var(--accent-orange);
             padding-left: var(--space-sm);
             margin-bottom: var(--space-lg);
-            color: var(--primary-blue);
+            color: var(--primary-navy);
         }
 
         h3 {
             font-size: 1.5rem;
+            color: var(--primary-navy);
+        }
+
+        h4 {
+            font-size: 1.2rem;
             color: var(--secondary-blue);
+            margin: var(--space-sm) 0 var(--space-xs);
         }
 
         p {
@@ -137,7 +143,7 @@
         }
 
         .section-dark {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-navy);
             color: var(--white);
         }
 
@@ -146,7 +152,7 @@
         }
 
         .section-accent {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
             color: var(--white);
         }
 
@@ -154,7 +160,7 @@
            HEADER AND NAVIGATION
         =========================== */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
             color: var(--white);
             padding: var(--space-md) 0;
             position: sticky;
@@ -176,14 +182,17 @@
         }
 
         .logo-img {
-            height: 50px;
-            width: auto;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
             transition: transform var(--transition-normal);
-            filter: brightness(0) invert(1);
+            border: 3px solid var(--accent-orange);
+            object-fit: cover;
+            box-shadow: var(--shadow-md);
         }
 
         .logo:hover .logo-img {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(5deg);
         }
 
         .logo-text h1 {
@@ -222,7 +231,7 @@
         }
 
         .nav-link:hover, .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.15);
             color: var(--accent-orange);
             box-shadow: var(--shadow-orange);
         }
@@ -262,7 +271,7 @@
            HERO SECTION
         =========================== */
         .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(45, 55, 72, 0.85)), 
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.9)), 
                         url('images/code-background.jpg') center/cover no-repeat;
             color: var(--white);
             text-align: center;
@@ -288,8 +297,9 @@
         .hero p {
             font-size: 1.2rem;
             margin-bottom: var(--space-lg);
-            opacity: 0.9;
+            opacity: 0.95;
             color: var(--white);
+            line-height: 1.6;
         }
 
         .btn {
@@ -312,7 +322,7 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
-            background: #e67e22;
+            background: #ea580c;
         }
 
         .btn::after {
@@ -381,7 +391,7 @@
         .card-title {
             font-size: 1.3rem;
             margin-bottom: var(--space-xs);
-            color: var(--primary-blue);
+            color: var(--primary-navy);
         }
 
         /* Grid layouts for responsive design */
@@ -391,15 +401,15 @@
         }
 
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
 
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
         .grid-4 {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         }
 
         /* ===========================
@@ -460,7 +470,7 @@
 
         .skill-icon {
             font-size: 3rem;
-            color: var(--primary-blue);
+            color: var(--primary-navy);
             margin-bottom: var(--space-sm);
             transition: all var(--transition-normal);
         }
@@ -473,7 +483,7 @@
         .skill-name {
             font-weight: 700;
             margin-bottom: var(--space-xs);
-            color: var(--primary-blue);
+            color: var(--primary-navy);
         }
 
         .skill-description {
@@ -495,7 +505,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 32, 44, 0.9);
+            background: rgba(30, 41, 59, 0.95);
             color: var(--white);
             padding: var(--space-md);
             transform: translateY(100%);
@@ -552,8 +562,8 @@
 
         input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+            border-color: var(--primary-navy);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
         }
 
         /* ===========================
@@ -615,7 +625,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--space-lg);
             margin-bottom: var(--space-lg);
         }
@@ -638,10 +648,14 @@
         .footer-links a {
             color: #cbd5e0;
             transition: color var(--transition-fast);
+            cursor: pointer;
+            padding: 4px 0;
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: var(--accent-orange);
+            transform: translateX(5px);
         }
 
         .social-links {
@@ -741,6 +755,45 @@
         }
 
         /* ===========================
+           RESOURCE SECTION FIXES
+        =========================== */
+        .resource-grid {
+            display: grid;
+            gap: var(--space-md);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .resource-card {
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .resource-list li {
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid var(--medium-gray);
+            position: relative;
+            padding-left: var(--space-md);
+        }
+
+        .resource-list li:before {
+            content: "▸";
+            color: var(--accent-orange);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .resource-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===========================
            RESPONSIVE DESIGN
         =========================== */
         @media (max-width: 992px) {
@@ -749,6 +802,9 @@
             .hero h1 { font-size: 2.5rem; }
             .flex-container {
                 flex-direction: column;
+            }
+            .resource-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -764,7 +820,7 @@
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
-                background: var(--primary-blue);
+                background: var(--primary-navy);
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
@@ -796,6 +852,15 @@
             .header-content {
                 position: relative;
             }
+
+            .logo-img {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -825,6 +890,11 @@
             
             .hero p {
                 font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
             }
         }
 
@@ -1033,7 +1103,7 @@
                 <div class="grid grid-2">
                     <div>
                         <h4>Foundation Skills (First 3-6 months)</h4>
-                        <ul>
+                        <ul class="resource-list">
                             <li>Basic programming concepts (variables, loops, conditionals)</li>
                             <li>HTML, CSS, and JavaScript fundamentals</li>
                             <li>Version control with Git and GitHub</li>
@@ -1044,7 +1114,7 @@
                     </div>
                     <div>
                         <h4>Intermediate Skills (6-12 months)</h4>
-                        <ul>
+                        <ul class="resource-list">
                             <li>Frameworks (React, Angular, or Vue for frontend)</li>
                             <li>Backend development (Node.js, Python, or Java)</li>
                             <li>Database design and SQL - speaking with data</li>
@@ -1129,7 +1199,7 @@
                     <div class="card-content">
                         <h3 class="card-title">Stage 1: Foundation (0-6 months)</h3>
                         <p><strong>Focus:</strong> Building your programming fundamentals and developing a problem-solving mindset.</p>
-                        <ul>
+                        <ul class="resource-list">
                             <li>Learn programming fundamentals (variables, loops, functions)</li>
                             <li>Build simple projects (calculator, to-do app, personal website)</li>
                             <li>Understand basic algorithms and data structures</li>
@@ -1144,7 +1214,7 @@
                     <div class="card-content">
                         <h3 class="card-title">Stage 2: Specialization (6-12 months)</h3>
                         <p><strong>Focus:</strong> Diving deeper into your chosen path and building real-world projects.</p>
-                        <ul>
+                        <ul class="resource-list">
                             <li>Choose a specialization (frontend, backend, mobile, etc.)</li>
                             <li>Learn relevant frameworks and tools for your chosen path</li>
                             <li>Build more complex, portfolio-worthy projects</li>
@@ -1159,7 +1229,7 @@
                     <div class="card-content">
                         <h3 class="card-title">Stage 3: Professional (1-2 years)</h3>
                         <p><strong>Focus:</strong> Transitioning into the professional world and continuous growth.</p>
-                        <ul>
+                        <ul class="resource-list">
                             <li>Land your first developer job or internship</li>
                             <li>Learn industry best practices and coding standards</li>
                             <li>Understand software architecture and design patterns</li>
@@ -1201,7 +1271,7 @@
                         <h3 class="card-title">Frontend Development</h3>
                         <p class="dark-text">Focuses on the user interface and user experience of websites and applications. You're the bridge between design and technology, creating interfaces that users love and remember.</p>
                         <h4>Key Technologies</h4>
-                        <ul class="dark-text">
+                        <ul class="resource-list dark-text">
                             <li>HTML, CSS, JavaScript - The holy trinity of the web</li>
                             <li>React, Angular, or Vue.js - Modern frameworks</li>
                             <li>Responsive Design - Making it work everywhere</li>
@@ -1217,7 +1287,7 @@
                         <h3 class="card-title">Backend Development</h3>
                         <p class="dark-text">Works on server-side logic, databases, and application programming interfaces (APIs). You're the engine room of applications—what users don't see but absolutely depend on.</p>
                         <h4>Key Technologies</h4>
-                        <ul class="dark-text">
+                        <ul class="resource-list dark-text">
                             <li>Node.js, Python, Java, or C# - Server-side power</li>
                             <li>SQL and NoSQL databases - Data storage solutions</li>
                             <li>API design and development - Connecting systems</li>
@@ -1233,7 +1303,7 @@
                         <h3 class="card-title">Full-Stack Development</h3>
                         <p class="dark-text">Combines frontend and backend skills to build complete applications. You see the big picture and understand how all the pieces fit together from database to user interface.</p>
                         <h4>Key Technologies</h4>
-                        <ul class="dark-text">
+                        <ul class="resource-list dark-text">
                             <li>Frontend frameworks + backend languages - The complete toolkit</li>
                             <li>Database management - Understanding data flow</li>
                             <li>DevOps basics - Deployment and infrastructure</li>
@@ -1251,7 +1321,7 @@
                         <h3 class="card-title">Mobile Development</h3>
                         <p class="dark-text">Specializes in creating applications for iOS and Android devices. You build experiences that live in people's pockets and become part of their daily routines.</p>
                         <h4>Key Technologies</h4>
-                        <ul class="dark-text">
+                        <ul class="resource-list dark-text">
                             <li>Swift (iOS) or Kotlin (Android) - Native development</li>
                             <li>React Native or Flutter - Cross-platform solutions</li>
                             <li>Mobile UI/UX principles - Designing for small screens</li>
@@ -1265,7 +1335,7 @@
                         <h3 class="card-title">DevOps Engineering</h3>
                         <p class="dark-text">Focuses on development operations, deployment, and infrastructure. You're the bridge between development and IT operations, ensuring applications run smoothly at scale.</p>
                         <h4>Key Technologies</h4>
-                        <ul class="dark-text">
+                        <ul class="resource-list dark-text">
                             <li>Docker and Kubernetes - Containerization and orchestration</li>
                             <li>CI/CD pipelines - Automated testing and deployment</li>
                             <li>Cloud platforms (AWS, Azure, GCP) - Scalable infrastructure</li>
@@ -1279,7 +1349,7 @@
                         <h3 class="card-title">Data Science</h3>
                         <p class="dark-text">Works with data analysis, machine learning, and statistical modeling. You turn raw data into insights and predictions that drive business decisions and create intelligent systems.</p>
                         <h4>Key Technologies</h4>
-                        <ul class="dark-text">
+                        <ul class="resource-list dark-text">
                             <li>Python with data libraries (Pandas, NumPy) - Data manipulation</li>
                             <li>SQL and database querying - Extracting insights</li>
                             <li>Machine learning frameworks - Building intelligent systems</li>
@@ -1296,51 +1366,57 @@
         <div class="container">
             <h2>Learning Resources & Next Steps</h2>
             
-            <div class="grid grid-2">
+            <div class="resource-grid">
                 <div class="fade-in">
                     <h3>Recommended Learning Paths</h3>
                     
-                    <div class="roadmap-area">
-                        <h4>Free Resources (Start Here!)</h4>
-                        <ul>
-                            <li><strong>FreeCodeCamp</strong> - Comprehensive curriculum with real projects and certifications</li>
-                            <li><strong>MDN Web Docs</strong> - The authoritative reference for web technologies</li>
-                            <li><strong>YouTube tutorials</strong> from trusted creators like Traversy Media, The Net Ninja</li>
-                            <li><strong>GitHub Learning Lab</strong> - Learn Git and GitHub through interactive courses</li>
-                            <li><strong>CS50</strong> - Harvard's famous computer science course (free online)</li>
-                        </ul>
+                    <div class="card resource-card">
+                        <div class="card-content">
+                            <h4 class="card-title">Free Resources (Start Here!)</h4>
+                            <ul class="resource-list">
+                                <li><strong>FreeCodeCamp</strong> - Comprehensive curriculum with real projects and certifications</li>
+                                <li><strong>MDN Web Docs</strong> - The authoritative reference for web technologies</li>
+                                <li><strong>YouTube tutorials</strong> from trusted creators like Traversy Media, The Net Ninja</li>
+                                <li><strong>GitHub Learning Lab</strong> - Learn Git and GitHub through interactive courses</li>
+                                <li><strong>CS50</strong> - Harvard's famous computer science course (free online)</li>
+                            </ul>
+                        </div>
                     </div>
                     
-                    <div class="roadmap-area">
-                        <h4>Paid Resources (When You're Ready to Invest)</h4>
-                        <ul>
-                            <li><strong>Udemy courses</strong> (wait for sales - they happen frequently)</li>
-                            <li><strong>Frontend Masters</strong> - In-depth frontend courses from industry experts</li>
-                            <li><strong>Pluralsight</strong> - Broad technology learning platform with skill assessments</li>
-                            <li><strong>Codecademy Pro</strong> - Interactive coding environment with projects</li>
-                        </ul>
+                    <div class="card resource-card" style="margin-top: var(--space-md);">
+                        <div class="card-content">
+                            <h4 class="card-title">Paid Resources (When You're Ready to Invest)</h4>
+                            <ul class="resource-list">
+                                <li><strong>Udemy courses</strong> (wait for sales - they happen frequently)</li>
+                                <li><strong>Frontend Masters</strong> - In-depth frontend courses from industry experts</li>
+                                <li><strong>Pluralsight</strong> - Broad technology learning platform with skill assessments</li>
+                                <li><strong>Codecademy Pro</strong> - Interactive coding environment with projects</li>
+                            </ul>
+                        </div>
                     </div>
                     
-                    <div class="roadmap-area">
-                        <h4>Practice Platforms (Sharpen Your Skills)</h4>
-                        <ul>
-                            <li><strong>LeetCode</strong> - Algorithm practice (essential for technical interviews)</li>
-                            <li><strong>HackerRank</strong> - Coding challenges and competitions</li>
-                            <li><strong>Codewars</strong> - Community-driven coding challenges with ranking system</li>
-                            <li><strong>Frontend Mentor</strong> - Real-world frontend projects with professional designs</li>
-                            <li><strong>Exercism</strong> - Language-specific exercises with mentor feedback</li>
-                        </ul>
+                    <div class="card resource-card" style="margin-top: var(--space-md);">
+                        <div class="card-content">
+                            <h4 class="card-title">Practice Platforms (Sharpen Your Skills)</h4>
+                            <ul class="resource-list">
+                                <li><strong>LeetCode</strong> - Algorithm practice (essential for technical interviews)</li>
+                                <li><strong>HackerRank</strong> - Coding challenges and competitions</li>
+                                <li><strong>Codewars</strong> - Community-driven coding challenges with ranking system</li>
+                                <li><strong>Frontend Mentor</strong> - Real-world frontend projects with professional designs</li>
+                                <li><strong>Exercism</strong> - Language-specific exercises with mentor feedback</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="fade-in">
                     <h3>Building Your Developer Profile</h3>
                     
-                    <div class="card">
+                    <div class="card resource-card">
                         <div class="card-content">
                             <h3 class="card-title">Create a Strong Portfolio</h3>
                             <p>Your portfolio is your most important asset when looking for developer jobs. It's not just about showing what you can do—it's about telling your story as a developer.</p>
-                            <ul>
+                            <ul class="resource-list">
                                 <li><strong>3-5 substantial projects</strong> with clean, well-documented code</li>
                                 <li><strong>Clear project descriptions</strong> that explain the problem and your solution</li>
                                 <li><strong>Links to live demos</strong> and GitHub repositories</li>
@@ -1351,11 +1427,11 @@
                         </div>
                     </div>
                     
-                    <div class="card" style="margin-top: var(--space-md);">
+                    <div class="card resource-card" style="margin-top: var(--space-md);">
                         <div class="card-content">
                             <h3 class="card-title">Network Effectively</h3>
                             <p>Building connections in the developer community can lead to opportunities, mentorship, and lifelong friendships. The tech industry is surprisingly small and interconnected.</p>
-                            <ul>
+                            <ul class="resource-list">
                                 <li><strong>Attend local meetups and conferences</strong> - Nothing beats face-to-face connections</li>
                                 <li><strong>Participate in online communities</strong> (Discord, Reddit, Stack Overflow)</li>
                                 <li><strong>Contribute to open source projects</strong> - Learn from others and give back</li>
@@ -1391,12 +1467,12 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a data-section="home">Home</a></li>
-                        <li><a data-section="skills">Skills Needed</a></li>
-                        <li><a data-section="challenges">Challenges</a></li>
-                        <li><a data-section="roadmap">Career Roadmap</a></li>
-                        <li><a data-section="specializations">Specializations</a></li>
-                        <li><a data-section="resources">Resources</a></li>
+                        <li><a class="footer-nav-link" data-section="home">Home</a></li>
+                        <li><a class="footer-nav-link" data-section="skills">Skills Needed</a></li>
+                        <li><a class="footer-nav-link" data-section="challenges">Challenges</a></li>
+                        <li><a class="footer-nav-link" data-section="roadmap">Career Roadmap</a></li>
+                        <li><a class="footer-nav-link" data-section="specializations">Specializations</a></li>
+                        <li><a class="footer-nav-link" data-section="resources">Resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1439,6 +1515,7 @@
         // =============================
         function initSectionNavigation() {
             const navLinks = document.querySelectorAll('.nav-link');
+            const footerLinks = document.querySelectorAll('.footer-nav-link');
             const sections = document.querySelectorAll('.section');
             const buttons = document.querySelectorAll('.btn[data-section]');
             
@@ -1469,6 +1546,14 @@
             
             // Add click event to navigation links
             navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
+            
+            // Add click event to footer links
+            footerLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     const sectionId = this.getAttribute('data-section');
                     showSection(sectionId);
